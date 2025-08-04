@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/razzor/static/css/main.3bd516bf.css",
+    "main.js": "/razzor/static/js/main.2f8046c0.js",
+    "static/js/453.61ee6536.chunk.js": "/razzor/static/js/453.61ee6536.chunk.js",
+    "index.html": "/razzor/index.html",
+    "main.3bd516bf.css.map": "/razzor/static/css/main.3bd516bf.css.map",
+    "main.2f8046c0.js.map": "/razzor/static/js/main.2f8046c0.js.map",
+    "453.61ee6536.chunk.js.map": "/razzor/static/js/453.61ee6536.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bd516bf.css",
+    "static/js/main.2f8046c0.js"
+  ]
+}
