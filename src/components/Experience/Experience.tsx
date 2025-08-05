@@ -36,21 +36,21 @@ const Experience: React.FC = () => {
       company: "ConsenSys Diligence",
       period: "June 2022 - Feb 2024",
       description: [
-        "Performed Security Audits on Complex Protocols",
-        "Helped auditee teams adopt better and more secure system designs",
-        "Conducted manual reviews, functional testing, automated testing, and fuzz testing",
-        "Provided client interactions and suggestions to resolve reported issues"
+        "Perform Security Audits on Complex Protocols",
+        "Help the auditee team to adopt a better and more secure system design",
+        "Research and Contribute to the in-house security tools",
+        "Research new attack vectors, and share the knowledge with fellow auditors in the team",
+        "Speak at leading security conferences sharing any new research or building relations with new protocols"
       ]
     },
     {
-      title: "Security Auditor",
-      company: "CipherShastra",
+      title: "Blockchain Smart Contract Auditor",
+      company: "QuillAudits",
       period: "May 2021 - June 2022",
       description: [
-        "Conducted Smart Contract Audits including Manual Review and Automated Testing",
-        "Provided client interactions and suggestions for issue resolution",
-        "Conducted interviews for new joiners to bring fresh talent",
-        "Developed comprehensive security assessment methodologies"
+        "Conduct Smart Contract Audits: Manual Review, Functional/Automated/Fuzz Testing",
+        "Client Interactions: Providing suggestions to resolve the issues reported during an audit",
+        "Interviews: Take interviews for new joiners in order to bring new talent in"
       ]
     },
     {

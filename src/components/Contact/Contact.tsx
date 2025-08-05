@@ -6,6 +6,7 @@ import {
   PhoneIcon, 
   LinkedinIcon, 
   GithubIcon, 
+  TwitterIcon,
   MapMarkerIcon,
   PaperPlaneIcon
 } from '../Icons';
@@ -68,22 +69,22 @@ const Contact: React.FC = () => {
       link: 'mailto:razzor@ciphershastra.com'
     },
     {
-      icon: PhoneIcon,
-      label: 'Phone',
-      value: '+91 7007309099',
-      link: 'tel:+917007309099'
-    },
-    {
       icon: LinkedinIcon,
       label: 'LinkedIn',
       value: 'linkedin.com/in/razzor',
       link: 'https://linkedin.com/in/razzor'
     },
     {
+      icon: TwitterIcon,
+      label: 'Twitter',
+      value: 'x.com/razzor_tweet',
+      link: 'https://x.com/razzor_tweet'
+    },
+    {
       icon: GithubIcon,
       label: 'GitHub',
-      value: 'github.com/razzor',
-      link: 'https://github.com/razzor'
+      value: 'github.com/razzorsec',
+      link: 'https://github.com/razzorsec'
     },
     {
       icon: MapMarkerIcon,
@@ -145,11 +146,24 @@ const Contact: React.FC = () => {
                     key={index}
                     className="contact-method"
                     variants={itemVariants}
-                    whileHover={{ x: 5 }}
+                    whileHover={{ y: -2, scale: 1.05 }}
+                    data-tooltip={info.value}
                   >
-                    <div className="method-icon">
-                      <info.icon />
-                    </div>
+                    {info.link ? (
+                      <a 
+                        href={info.link} 
+                        className="method-icon"
+                        target={info.link.startsWith('http') ? '_blank' : undefined}
+                        rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        style={{ textDecoration: 'none', color: 'inherit' }}
+                      >
+                        <info.icon />
+                      </a>
+                    ) : (
+                      <div className="method-icon">
+                        <info.icon />
+                      </div>
+                    )}
                     <div className="method-content">
                       <div className="method-label">{info.label}</div>
                       {info.link ? (

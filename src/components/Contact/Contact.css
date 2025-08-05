@@ -33,20 +33,22 @@
 }
 
 .contact-methods {
-  display: grid;
+  display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .contact-method {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: var(--bg-card);
-  border-radius: 0.75rem;
-  border: 1px solid var(--border-color);
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .contact-method:hover {
@@ -57,35 +59,80 @@
 .method-icon {
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Brand-specific colors */
+.contact-method:nth-child(1) .method-icon {
+  background: #EA4335; /* Gmail red */
+}
+
+.contact-method:nth-child(2) .method-icon {
+  background: #0077B5; /* LinkedIn blue */
+}
+
+.contact-method:nth-child(3) .method-icon {
+  background: #1DA1F2; /* Twitter blue */
+}
+
+.contact-method:nth-child(4) .method-icon {
+  background: #333; /* GitHub dark */
+}
+
+.contact-method:nth-child(5) .method-icon {
+  background: #4285F4; /* Google Maps blue */
+}
+
+.method-icon:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .method-content {
-  flex: 1;
+  display: none; /* Hide text content, keep only icons */
 }
 
 .method-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 0.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  display: none;
 }
 
 .method-value {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  display: none;
+}
+
+/* Tooltip on hover */
+.contact-method {
+  position: relative;
+}
+
+.contact-method::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.contact-method:hover::after {
+  opacity: 1;
 }
 
 .method-value:hover {
@@ -231,20 +278,39 @@
     grid-template-columns: 1fr;
   }
 
-  .contact-method {
-    padding: 0.75rem;
+  .contact-methods {
+    gap: 1.25rem;
+    justify-content: center;
   }
 
   .method-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 480px) {
   .contact-form-wrapper {
     padding: 1.5rem;
+  }
+
+  .contact-methods {
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .method-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .contact-method::after {
+    bottom: -35px;
+    font-size: 0.7rem;
+    padding: 4px 8px;
   }
 
   .contact-method {

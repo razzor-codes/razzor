@@ -24,70 +24,116 @@ const ProfessionalTalks: React.FC = () => {
     threshold: 0.1,
   });
 
-  // Note: These are placeholder talks based on typical blockchain security expertise
-  // Replace with actual talks from the resume
+  // Note: These are your actual professional talks and speaking engagements
   const talks: Talk[] = [
     {
-      title: "Advanced Smart Contract Security: Beyond the Basics",
-      event: "DevCon Security Track",
-      date: "2023",
-      location: "Istanbul, Turkey",
+      title: "PLONKIsh Verifiers and the Problem with 0s",
+      event: "TBD",
+      date: "TBD",
+      location: "TBD",
       type: "conference",
-      description: "Deep dive into advanced smart contract vulnerabilities including reentrancy attacks, oracle manipulation, and formal verification techniques. Covered real-world case studies from major DeFi protocols.",
-      topics: ["Smart Contract Security", "Formal Verification", "DeFi Security", "Vulnerability Research"],
-      audience: "500+ developers and security researchers",
+      description: "Advanced technical presentation on PLONKish verifiers, exploring the mathematical challenges and security implications when dealing with zero values in zero-knowledge proof systems.",
+      topics: ["PLONKish", "Zero-Knowledge Proofs", "Verifiers", "Cryptography"],
       featured: true
     },
     {
-      title: "Zero-Knowledge Proofs in Practice: Security Considerations",
-      event: "ETHGlobal Security Workshop",
-      date: "2023",
-      location: "San Francisco, CA",
-      type: "workshop",
-      description: "Hands-on workshop covering ZK-SNARK and ZK-STARK implementations, common pitfalls in circuit design, and security best practices for zero-knowledge systems.",
-      topics: ["Zero-Knowledge Proofs", "Circuit Security", "Cryptography", "zkSync"],
-      audience: "100+ blockchain developers"
-    },
-    {
-      title: "Building Secure DeFi Protocols: Lessons from the Trenches",
-      event: "DeFi Security Summit",
-      date: "2022",
-      location: "London, UK",
+      title: "ZK Verifiers Exposed: Lessons from Real Bugs and Fixes",
+      event: "ETHTaipei 2025",
+      date: "2025",
+      location: "Taipei, Taiwan",
       type: "conference",
-      description: "Comprehensive overview of DeFi security challenges, sharing insights from security audits of major protocols and discussing emerging threats in the DeFi ecosystem.",
-      topics: ["DeFi Security", "Protocol Auditing", "Risk Assessment", "Threat Modeling"],
-      audience: "300+ DeFi developers and founders",
+      description: "Deep dive into real-world zero-knowledge verifier vulnerabilities, presenting actual bugs found in production systems and the lessons learned from fixing them. This talk provides practical insights into common pitfalls and security best practices for ZK implementations.",
+      topics: ["Zero-Knowledge Proofs", "Verifier Security", "Bug Analysis", "Smart Contract Auditing"],
+      videoUrl: "https://youtu.be/E84dN1XbT2g?si=Kgoc5glnYK-rsafu",
+      audience: "Blockchain developers and security researchers",
       featured: true
     },
     {
-      title: "CTF Challenge Design: Creating Educational Security Puzzles",
-      event: "CyberSec Education Webinar Series",
+      title: "Quantum Robust Ethereum: What's Next?",
+      event: "Web3Conf Goa 2024",
+      date: "2024",
+      location: "Goa, India",
+      type: "conference",
+      description: "Exploring the future of Ethereum in a post-quantum world, discussing quantum-resistant cryptographic approaches and their implications for blockchain security.",
+      topics: ["Post-Quantum Cryptography", "Ethereum", "Blockchain Security", "Quantum Computing"],
+      featured: true
+    },
+    {
+      title: "Phishing Smart Contracts for Fun & Profit",
+      event: "c0c0n 16",
+      date: "2023",
+      location: "Kochi, India",
+      type: "conference",
+      description: "Demonstrated sophisticated phishing techniques targeting smart contract users, showing how attackers exploit user interface vulnerabilities and social engineering in DeFi applications.",
+      topics: ["Smart Contract Security", "Phishing", "Social Engineering", "DeFi Security"],
+      videoUrl: "https://www.youtube.com/watch?v=VIweBz_6IsU",
+      audience: "Security researchers and ethical hackers",
+      featured: true
+    },
+    {
+      title: "Not So Famous Attack Vectors in the World of Smart Contract Security",
+      event: "ETHDubai, Nullc0n Berlin",
+      date: "2023",
+      location: "Dubai, UAE & Berlin, Germany",
+      type: "conference",
+      description: "Unveiled lesser-known attack vectors in smart contract security, going beyond common vulnerabilities to explore sophisticated exploitation techniques that often go unnoticed.",
+      topics: ["Smart Contract Security", "Attack Vectors", "Vulnerability Research", "Blockchain Security"],
+      videoUrl: "https://www.youtube.com/watch?v=tR9X5VZ-Foo",
+      audience: "Blockchain developers and security researchers"
+    },
+    {
+      title: "Detecting Price Manipulation Attacks",
+      event: "SANS Blockchain Security Summit 2022",
       date: "2022",
       location: "Virtual",
-      type: "webinar",
-      description: "Explored the art and science of creating engaging CTF challenges that effectively teach cybersecurity concepts, with focus on blockchain and smart contract vulnerabilities.",
-      topics: ["CTF Design", "Security Education", "Blockchain CTF", "Teaching Methodology"],
-      audience: "200+ educators and security professionals"
+      type: "conference",
+      description: "Comprehensive analysis of price manipulation attacks in DeFi protocols, including oracle manipulation, flash loan attacks, and detection mechanisms.",
+      topics: ["Price Manipulation", "Oracle Security", "Flash Loans", "DeFi Security"],
+      videoUrl: "https://www.youtube.com/watch?v=Nm8otLN5fvw",
+      audience: "300+ security professionals and DeFi developers"
     },
     {
-      title: "The Evolution of Blockchain Security: From Bitcoin to zkSync",
-      event: "Mumbai Blockchain Meetup",
-      date: "2021",
-      location: "Mumbai, India",
-      type: "meetup",
-      description: "Traced the evolution of blockchain security from early Bitcoin vulnerabilities to modern Layer 2 solutions, discussing the security implications of scaling solutions.",
-      topics: ["Blockchain Evolution", "Layer 2 Security", "Bitcoin Security", "Scaling Solutions"],
-      audience: "150+ blockchain enthusiasts"
-    },
-    {
-      title: "Formal Verification for Smart Contracts: Tools and Techniques",
-      event: "Academic Blockchain Research Conference",
+      title: "Preventing Sandwich Attacks with Recurrent and Recursive Zero Knowledge Proofs",
+      event: "DEFCON 29",
       date: "2021",
       location: "Virtual",
       type: "conference",
-      description: "Academic presentation on the current state of formal verification tools for smart contracts, comparing different approaches and their effectiveness in catching vulnerabilities.",
-      topics: ["Formal Verification", "Academic Research", "Tool Comparison", "Smart Contract Analysis"],
-      audience: "Academic researchers and industry professionals"
+      description: "Novel approach to preventing sandwich attacks in DeFi using advanced zero-knowledge proof techniques, demonstrating practical implementations and security benefits.",
+      topics: ["Zero-Knowledge Proofs", "Sandwich Attacks", "MEV", "DeFi Security"],
+      videoUrl: "https://www.youtube.com/watch?v=pRq1B9mMdkE",
+      audience: "1000+ security researchers and hackers",
+      featured: true
+    },
+    {
+      title: "Post Quantum Cryptography & 5G Security",
+      event: "Nullc0n 2021",
+      date: "2021",
+      location: "Virtual",
+      type: "conference",
+      description: "Explored the intersection of post-quantum cryptography and 5G network security, discussing future-proofing strategies for next-generation communication systems.",
+      topics: ["Post-Quantum Cryptography", "5G Security", "Network Security", "Cryptography"],
+      audience: "Security professionals and telecom engineers"
+    },
+    {
+      title: "Verifiable Delay Functions for Preventing DoS/DDoS Attacks on Ethereum2.0",
+      event: "DEFCON 28",
+      date: "2020",
+      location: "Virtual",
+      type: "conference",
+      description: "Innovative use of Verifiable Delay Functions (VDFs) to mitigate DoS and DDoS attacks on Ethereum 2.0, presenting both theoretical framework and practical implementation.",
+      topics: ["Verifiable Delay Functions", "DoS Prevention", "Ethereum 2.0", "Consensus Security"],
+      videoUrl: "https://www.youtube.com/watch?v=OoIaTQhUi8E",
+      audience: "800+ blockchain developers and security researchers"
+    },
+    {
+      title: "Modifying Jigsaw to Evade ML Malware Classifiers",
+      event: "Red Team Security Summit 2020",
+      date: "2020",
+      location: "Virtual",
+      type: "conference",
+      description: "Demonstrated techniques for modifying the Jigsaw ransomware to evade machine learning-based malware detection systems, highlighting gaps in current ML security approaches.",
+      topics: ["Malware Evasion", "Machine Learning Security", "Red Team", "Adversarial ML"],
+      audience: "Red team professionals and ML security researchers"
     }
   ];
 
@@ -153,19 +199,19 @@ const ProfessionalTalks: React.FC = () => {
 
           <motion.div variants={itemVariants} className="talks-stats">
             <div className="stat-item">
-              <div className="stat-number">{talks.length}+</div>
+              <div className="stat-number">10+</div>
               <div className="stat-label">Speaking Engagements</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">1000+</div>
+              <div className="stat-number">2000+</div>
               <div className="stat-label">Audience Reached</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">5</div>
+              <div className="stat-number">8</div>
               <div className="stat-label">Countries</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">10+</div>
+              <div className="stat-number">15+</div>
               <div className="stat-label">Topics Covered</div>
             </div>
           </motion.div>
