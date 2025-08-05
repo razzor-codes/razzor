@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
           >
             <div className="profile-image-container">
               <motion.img
-                src="/profile-image.jpg"
+                src={`${process.env.PUBLIC_URL}/profile-image.jpg`}
                 alt="Tejaswa Rastogi - Blockchain Security Engineer"
                 className="profile-image"
                 initial={{ scale: 0.8, opacity: 0 }}
