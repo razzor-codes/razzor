@@ -49,38 +49,50 @@ const Education: React.FC = () => {
     {
       name: "Certified Ethical Hacker (CEH)",
       issuer: "EC-Council",
-      date: "2020",
-      description: "Comprehensive ethical hacking and penetration testing certification"
+      date: "October 2020",
+      description: "Comprehensive ethical hacking and penetration testing certification covering advanced attack techniques and defensive methodologies"
     },
     {
-      name: "CISSP",
-      issuer: "ISC²",
-      date: "2021",
-      description: "Advanced cybersecurity management and architecture certification"
+      name: "Blockchain Security",
+      issuer: "Infosec",
+      date: "August 2020",
+      description: "Specialized certification focusing on blockchain technology security, smart contract vulnerabilities, and cryptocurrency security"
     },
     {
-      name: "Security+ CompTIA",
-      issuer: "CompTIA",
-      date: "2019",
-      description: "Foundation-level cybersecurity certification covering core security concepts"
+      name: "Autopsy Digital Forensics",
+      issuer: "Basis Technology",
+      date: "June 2020",
+      description: "Digital forensics certification covering file system analysis, data recovery, and forensic investigation techniques"
     },
     {
-      name: "OSCP",
-      issuer: "Offensive Security",
-      date: "2022",
-      description: "Hands-on penetration testing certification with practical lab experience"
+      name: "CCNA CyberOps",
+      issuer: "CISCO",
+      date: "March 2018",
+      description: "Cybersecurity operations certification covering security monitoring, incident response, and threat analysis"
     },
     {
-      name: "Blockchain Security Certification",
-      issuer: "ConsenSys Academy",
-      date: "2021",
-      description: "Specialized certification in blockchain and smart contract security"
+      name: "Python3 Programming",
+      issuer: "Sololearn",
+      date: "August 2017",
+      description: "Python programming certification demonstrating proficiency in Python development and scripting"
     },
     {
-      name: "Smart Contract Auditor",
-      issuer: "OpenZeppelin",
-      date: "2022",
-      description: "Advanced certification in smart contract security auditing methodologies"
+      name: "Network Devices",
+      issuer: "Cybrary",
+      date: "August 2017",
+      description: "Network infrastructure and device management certification covering routing, switching, and network security"
+    },
+    {
+      name: "Cross-Site Scripting (XSS)",
+      issuer: "Cybrary",
+      date: "August 2017",
+      description: "Web application security certification focusing on XSS vulnerabilities, exploitation techniques, and mitigation strategies"
+    },
+    {
+      name: "MTA: Security Fundamentals",
+      issuer: "Microsoft",
+      date: "November 2016",
+      description: "Microsoft Technology Associate certification covering fundamental security concepts and Windows security architecture"
     }
   ];
 
