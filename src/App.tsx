@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { HelmetProvider } from 'react-helmet-async';
+import SEO from './components/SEO/SEO';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -45,36 +47,39 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Experience />
-      <Education />
-      <Projects />
-      <Skills />
-      <ProfessionalTalks />
-      <Contact />
-      <Footer />
-      
-      {/* Scroll to Top Button */}
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            onClick={scrollToTop}
-            className="scroll-to-top"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Scroll to top"
-          >
-            <ArrowUpIcon />
-          </motion.button>
-        )}
-      </AnimatePresence>
-    </div>
+    <HelmetProvider>
+      <div className="App">
+        <SEO />
+        <Header />
+        <Hero />
+        <About />
+        <Experience />
+        <Education />
+        <Projects />
+        <Skills />
+        <ProfessionalTalks />
+        <Contact />
+        <Footer />
+        
+        {/* Scroll to Top Button */}
+        <AnimatePresence>
+          {showScrollTop && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              onClick={scrollToTop}
+              className="scroll-to-top"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Scroll to top"
+            >
+              <ArrowUpIcon />
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
+    </HelmetProvider>
   );
 }
 
