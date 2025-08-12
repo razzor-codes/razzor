@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
       icon: GithubIcon,
-      href: 'https://github.com/razzor',
+      href: 'https://github.com/razzorsec',
       label: 'GitHub'
     },
     {
