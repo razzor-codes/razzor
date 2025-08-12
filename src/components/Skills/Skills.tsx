@@ -30,7 +30,6 @@ const Skills: React.FC = () => {
       color: "#ef4444",
       skills: [
         "Smart Contract Auditing",
-        "Formal Verification",
         "Static Analysis",
         "Threat Modeling",
         "Vulnerability Assessment",
@@ -45,6 +44,7 @@ const Skills: React.FC = () => {
       color: "#8b5cf6",
       skills: [
         "Zero Knowledge Proofs",
+        "ZK Proving Systems (PLONK, FFLONK)",
         "Elliptic Curve Cryptography",
         "Hash Functions",
         "Digital Signatures",
@@ -78,8 +78,6 @@ const Skills: React.FC = () => {
         "Hardhat",
         "Slither",
         "Mythril",
-        "Echidna",
-        "Manticore",
         "Surya",
         "Remix IDE"
       ]
@@ -93,7 +91,6 @@ const Skills: React.FC = () => {
         "Economic Models",
         "Game Theory",
         "Formal Methods",
-        "Research Publications",
         "Technical Writing",
         "Open Source Contributions",
         "Community Engagement"

@@ -56,7 +56,7 @@ const About: React.FC = () => {
               </p>
               
               <p>
-                With experience at leading security firms like ConsenSys Diligence and CipherShastra, 
+                With experience at leading security firms like ConsenSys Diligence and QuillAudits, 
                 I've conducted numerous security audits on complex protocols, helped teams adopt more 
                 secure system designs, and contributed to the blockchain security community through 
                 research and education.
@@ -79,8 +79,8 @@ const About: React.FC = () => {
                   <p>Continuously learning advanced cryptography, ZK-STARK, and cutting-edge security research</p>
                 </div>
                 <div className="highlight-item">
-                  <h4>🏢 Entrepreneurship</h4>
-                  <p>Founded CipherShastra and RazzorSec, building security communities and solutions</p>
+                  <h4>🏢 Open Source Projects</h4>
+                  <p>Created CipherShastra and RazzorSec as personal projects to advance security tools and community resources</p>
                 </div>
               </div>
             </motion.div>
@@ -97,10 +97,6 @@ const About: React.FC = () => {
               <div className="stat-item">
                 <div className="stat-number">8</div>
                 <div className="stat-label">Certifications</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">2</div>
-                <div className="stat-label">Companies Founded</div>
               </div>
             </motion.div>
           </div>

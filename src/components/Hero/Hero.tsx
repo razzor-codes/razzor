@@ -38,9 +38,8 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Dedicated and passionate Blockchain Security Researcher with a strong commitment to 
-              safeguarding digital assets and systems. Currently working at Matter Labs/zkSync, 
-              specializing in smart contract audits and zero-knowledge proof systems.
+              Dedicated Blockchain Security Researcher specializing in smart contract audits 
+              and zero-knowledge proof systems. Currently working at Matter Labs/zkSync.
             </motion.p>
             
             <motion.div
@@ -52,7 +51,10 @@ const Hero: React.FC = () => {
               <a href="#contact" className="btn btn-primary">
                 Get In Touch
               </a>
-              <a href="/resume.pdf" className="btn btn-outline" download>
+              <a href="#projects" className="btn btn-outline">
+                View Projects
+              </a>
+              <a href="/resume.pdf" className="btn btn-secondary" download>
                 <DownloadIcon />
                 Download Resume
               </a>
@@ -65,10 +67,11 @@ const Hero: React.FC = () => {
               transition={{ delay: 1.0, duration: 0.8 }}
             >
               <a 
-                href="https://github.com/razzor" 
+                href="https://github.com/razzorsec" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
+                aria-label="GitHub"
               >
                 <GithubIcon />
               </a>
@@ -77,12 +80,14 @@ const Hero: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
+                aria-label="LinkedIn"
               >
                 <LinkedinIcon />
               </a>
               <a 
                 href="mailto:razzor@ciphershastra.com"
                 className="social-link"
+                aria-label="Email"
               >
                 <EnvelopeIcon />
               </a>

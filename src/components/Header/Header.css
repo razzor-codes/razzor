@@ -16,6 +16,17 @@
   box-shadow: var(--shadow);
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform-origin: 0%;
+  z-index: 1001;
+}
+
 @media (prefers-color-scheme: dark) {
   .header {
     background-color: rgba(15, 23, 42, 0.95);
@@ -76,6 +87,15 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background: var(--primary-color);
 }
 
 .mobile-menu-btn {

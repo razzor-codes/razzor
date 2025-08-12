@@ -18,7 +18,6 @@ interface Project {
   github?: string;
   additionalLink?: string;
   type: 'audit' | 'research' | 'tool';
-  featured?: boolean;
 }
 
 const Projects: React.FC = () => {
@@ -33,16 +32,14 @@ const Projects: React.FC = () => {
       description: "Founded a blockchain security company providing comprehensive smart contract auditing services and security consulting.",
       technologies: ["Security Consulting", "Smart Contracts", "Team Building"],
       link: "https://ciphershastra.com",
-      type: "research",
-      featured: true
+      type: "research"
     },
     {
       title: "Linea Plonk Verifier",
       description: "Security audit of Linea's PLONK verifier implementation, focusing on zero-knowledge proof verification security and circuit integrity.",
       technologies: ["Solidity", "ZK-PLONK", "Formal Verification", "Circuit Analysis"],
       link: "https://diligence.consensys.io/audits/2023/06/linea-plonk-verifier/",
-      type: "audit",
-      featured: true
+      type: "audit"
     },
     {
       title: "Linea Message Service & Token Bridge",
@@ -50,8 +47,7 @@ const Projects: React.FC = () => {
       technologies: ["Solidity", "Layer 2", "Bridge Security", "ZK Rollups", "Cross-chain"],
       link: "https://diligence.consensys.io/audits/2023/06/linea-message-service/",
       github: "https://diligence.consensys.io/audits/2023/06/linea-canonical-token-bridge/",
-      type: "audit",
-      featured: true
+      type: "audit"
     },
     {
       title: "Gearbox Finance V2",
@@ -158,16 +154,17 @@ const Projects: React.FC = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`project-card ${project.featured ? 'featured' : ''}`}
+                className="project-card"
               >
                 <div className="project-header">
                   <div className="project-icon">
                     {getProjectIcon(project.type)}
                   </div>
-                  <div className="project-type">
-                    {getProjectTypeLabel(project.type)}
+                  <div className="project-meta">
+                    <div className="project-type">
+                      {getProjectTypeLabel(project.type)}
+                    </div>
                   </div>
-                  {project.featured && <div className="featured-badge">Featured</div>}
                 </div>
 
                 <div className="project-content">
