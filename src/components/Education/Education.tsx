@@ -135,6 +135,7 @@ const Education: React.FC = () => {
           className="education-content"
         >
           <motion.div variants={itemVariants} className="education-header">
+            <span className="section-eyebrow">03 // Education</span>
             <h2 className="section-title">Education & Certifications</h2>
             <p className="section-subtitle">
               Academic background and professional certifications in cybersecurity and blockchain technology

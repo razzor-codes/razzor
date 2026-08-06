@@ -4,7 +4,37 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f8fb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080b12" />
+
+    <!-- Typography: Space Grotesk (display), Inter (body), JetBrains Mono (labels/code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Resolve the theme before first paint so there is no light/dark flash.
+      Stored preference wins; otherwise follow the OS setting.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     
     <!-- Enhanced SEO Meta Tags -->
     <meta name="description" content="Tejaswa Rastogi (Razzor) - Expert Blockchain Security Engineer, Smart Contract Auditor, and Zero-Knowledge Proof Specialist. Professional cybersecurity consultant with expertise in DeFi, Web3, and cryptocurrency security." />
@@ -39,8 +69,8 @@
     
     <!-- Additional SEO -->
     <link rel="canonical" href="https://razzor-codes.github.io/razzor/" />
-    <meta name="geo.region" content="IN" />
-    <meta name="geo.country" content="India" />
+    <meta name="geo.region" content="AE" />
+    <meta name="geo.country" content="United Arab Emirates" />
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -71,14 +101,14 @@
       ],
       "worksFor": {
         "@type": "Organization",
-        "name": "Freelance Cybersecurity Consultant"
+        "name": "ADI Foundation"
       },
       "hasOccupation": {
         "@type": "Occupation",
         "name": "Blockchain Security Engineer",
         "occupationLocation": {
           "@type": "Country",
-          "name": "India"
+          "name": "United Arab Emirates"
         },
         "skills": [
           "Smart Contract Auditing",

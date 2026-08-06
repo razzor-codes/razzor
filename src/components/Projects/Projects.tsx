@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   ExternalLinkIcon, 
-  GithubIcon, 
   ShieldIcon, 
   CodeIcon, 
   LockIcon 
@@ -143,6 +142,7 @@ const Projects: React.FC = () => {
           className="projects-content"
         >
           <motion.div variants={itemVariants} className="projects-header">
+            <span className="section-eyebrow">04 // Work</span>
             <h2 className="section-title">Featured Work & Projects</h2>
             <p className="section-subtitle">
               Selected security audits, research projects, and contributions to the blockchain security ecosystem

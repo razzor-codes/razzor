@@ -1,188 +1,174 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GithubIcon, LinkedinIcon, EnvelopeIcon, DownloadIcon } from '../Icons';
+// DownloadIcon is re-added alongside the resume button below when it returns.
+import { GithubIcon, LinkedinIcon, EnvelopeIcon, TwitterIcon } from '../Icons';
 import './Hero.css';
+
+const STATS = [
+  { value: '50+', label: 'Security Audits' },
+  { value: '4+', label: 'Years Experience' },
+  { value: '10+', label: 'Conference Talks' },
+];
+
+const SOCIALS = [
+  { href: 'https://github.com/razzorsec', label: 'GitHub', Icon: GithubIcon },
+  { href: 'https://linkedin.com/in/razzor', label: 'LinkedIn', Icon: LinkedinIcon },
+  { href: 'https://x.com/razzor_tweet', label: 'Twitter', Icon: TwitterIcon },
+  { href: 'mailto:razzor@ciphershastra.com', label: 'Email', Icon: EnvelopeIcon },
+];
+
+const FLOATING_CHIPS = [
+  { text: 'Zero-Knowledge', className: 'chip-zk' },
+  { text: 'Solidity', className: 'chip-solidity' },
+  { text: 'Smart Contract Audits', className: 'chip-audit' },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Hero: React.FC = () => {
   return (
     <section id="home" className="hero">
+      {/* Ambient colour washes behind the content */}
+      <div className="hero-background" aria-hidden="true">
+        <span className="bg-orb bg-orb-1" />
+        <span className="bg-orb bg-orb-2" />
+        <span className="bg-orb bg-orb-3" />
+      </div>
+
       <div className="container">
         <div className="hero-content">
           <motion.div
             className="hero-text"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.1, delayChildren: 0.05 }}
           >
-            <motion.h1
-              className="hero-title"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
+            <motion.div className="hero-badge" variants={fadeUp}>
+              <span>
+                <span className="status-dot" />
+                Available for security audits
+              </span>
+            </motion.div>
+
+            <motion.h1 className="hero-title" variants={fadeUp}>
               Hi, I'm <span className="highlight">Tejaswa Rastogi</span>
             </motion.h1>
-            
-            <motion.h2
-              className="hero-subtitle"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
+
+            <motion.h2 className="hero-subtitle" variants={fadeUp}>
               Blockchain Security Engineer
             </motion.h2>
-            
-            <motion.p
-              className="hero-description"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              Dedicated Blockchain Security Researcher specializing in smart contract audits 
-              and zero-knowledge proof systems. Currently working at Matter Labs/zkSync.
+
+            <motion.p className="hero-description" variants={fadeUp}>
+              I break and harden smart contracts and zero-knowledge systems. Currently
+              Blockchain Security Engineer at <strong>ADI Foundation</strong> — previously
+              Matter Labs/zkSync, ConsenSys Diligence, and QuillAudits.
             </motion.p>
-            
-            <motion.div
-              className="hero-buttons"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-            >
+
+            <motion.div className="hero-buttons" variants={fadeUp}>
               <a href="#contact" className="btn btn-primary">
                 Get In Touch
               </a>
               <a href="#projects" className="btn btn-outline">
-                View Projects
+                View Work
               </a>
-              <a href="/resume.pdf" className="btn btn-secondary" download>
+              {/* Hidden until the CV is refreshed — drop in the new PDF under
+                  public/, update the filename here, and uncomment. */}
+              {/*
+              <a
+                href={`${process.env.PUBLIC_URL}/Tej_CV_2025.pdf`}
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <DownloadIcon />
-                Download Resume
+                Resume
               </a>
+              */}
             </motion.div>
-            
-            <motion.div
-              className="hero-social"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.8 }}
-            >
-              <a 
-                href="https://github.com/razzorsec" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="GitHub"
-              >
-                <GithubIcon />
-              </a>
-              <a 
-                href="https://linkedin.com/in/razzor" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon />
-              </a>
-              <a 
-                href="mailto:razzor@ciphershastra.com"
-                className="social-link"
-                aria-label="Email"
-              >
-                <EnvelopeIcon />
-              </a>
+
+            <motion.div className="hero-stats" variants={fadeUp}>
+              {STATS.map((stat) => (
+                <div className="stat" key={stat.label}>
+                  <span className="stat-number">{stat.value}</span>
+                  <span className="stat-label">{stat.label}</span>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div className="hero-social" variants={fadeUp}>
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="social-link"
+                  aria-label={label}
+                  {...(href.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                >
+                  <Icon />
+                </a>
+              ))}
             </motion.div>
           </motion.div>
-          
+
           <motion.div
             className="hero-image"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="profile-image-container">
-              <motion.img
-                src={`${process.env.PUBLIC_URL}/profile-image.jpg`}
-                alt="Tejaswa Rastogi - Blockchain Security Engineer"
-                className="profile-image"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-                onError={(e) => {
-                  // Fallback to placeholder if image doesn't load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const placeholder = target.nextElementSibling as HTMLElement;
-                  if (placeholder) placeholder.style.display = 'block';
-                }}
-              />
-              <div className="image-placeholder" style={{ display: 'none' }}>
-                <motion.div
-                  className="floating-elements"
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    duration: 4,
+            <div className="profile-frame">
+              <div className="profile-image-container">
+                <img
+                  src={`${process.env.PUBLIC_URL}/profile-image.jpg`}
+                  alt="Tejaswa Rastogi, Blockchain Security Engineer"
+                  className="profile-image"
+                  width={400}
+                  height={500}
+                />
+              </div>
+
+              {FLOATING_CHIPS.map((chip, index) => (
+                <motion.span
+                  key={chip.text}
+                  className={`floating-chip ${chip.className}`}
+                  animate={{ y: [0, -9, 0] }}
+                  transition={{
+                    duration: 4 + index,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: 'easeInOut',
+                    delay: index * 0.7,
                   }}
                 >
-                  🔐
-                </motion.div>
-                <motion.div
-                  className="floating-elements blockchain"
-                  animate={{ 
-                    y: [0, 20, 0],
-                    rotate: [0, -5, 0]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                ⛓️
-              </motion.div>
-              <motion.div
-                className="floating-elements security"
-                animate={{ 
-                  y: [0, -15, 0],
-                  x: [0, 10, 0]
-                }}
-                transition={{ 
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2
-                }}
-              >
-                🛡️
-              </motion.div>
-              </div>
+                  {chip.text}
+                </motion.span>
+              ))}
             </div>
           </motion.div>
         </div>
       </div>
-      
-      <motion.div
+
+      <motion.a
+        href="#about"
         className="scroll-indicator"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        aria-label="Scroll to about section"
       >
-        <motion.div
-          className="scroll-mouse"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="scroll-wheel"></div>
-        </motion.div>
-        <p>Scroll to explore</p>
-      </motion.div>
+        <span className="scroll-mouse">
+          <motion.span
+            className="scroll-wheel"
+            animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </span>
+        <span className="scroll-text">Scroll</span>
+      </motion.a>
     </section>
   );
 };

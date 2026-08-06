@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local tooling
+.claude/
+
+# local image backup (kept out of public/ so it is not deployed)
+/profile-image-bak.jpg

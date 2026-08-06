@@ -126,6 +126,7 @@ const Skills: React.FC = () => {
           className="skills-content"
         >
           <motion.div variants={itemVariants} className="skills-header">
+            <span className="section-eyebrow">05 // Skills</span>
             <h2 className="section-title">Skills & Expertise</h2>
             <p className="section-subtitle">
               Technical skills, certifications, and areas of expertise in blockchain security and beyond
@@ -138,12 +139,10 @@ const Skills: React.FC = () => {
                 key={index}
                 variants={itemVariants}
                 className="skill-category"
+                style={{ '--category-color': category.color } as React.CSSProperties}
                 whileHover={{ y: -5 }}
               >
-                <div 
-                  className="category-header"
-                  style={{ '--category-color': category.color } as React.CSSProperties}
-                >
+                <div className="category-header">
                   <div className="category-icon">
                     <category.icon />
                   </div>

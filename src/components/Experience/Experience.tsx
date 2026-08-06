@@ -20,10 +20,30 @@ const Experience: React.FC = () => {
 
   const experiences: ExperienceItem[] = [
     {
+      title: "Blockchain Security Engineer",
+      company: "ADI Foundation",
+      period: "June 2026 - Present",
+      current: true,
+      description: [
+        "Perform in-house code reviews across the organisation's codebases",
+        "Lead blockchain security audits and secure development efforts",
+        "Define AppSec policies, procedures, and engineering guidelines",
+        "Own incident response and security triaging"
+      ]
+    },
+    {
+      title: "Freelance Smart Contract Auditor",
+      company: "Independent",
+      period: "August 2025 - June 2026",
+      description: [
+        "Delivered independent security audits for a range of blockchain projects",
+        "Advised protocol teams on remediation and secure design decisions"
+      ]
+    },
+    {
       title: "Security Engineer",
       company: "Matter Labs/zkSync",
-      period: "March 2024 - Present",
-      current: true,
+      period: "March 2024 - August 2025",
       description: [
         "Perform Security Reviews on existing and new smart contracts and circuits",
         "Research and Engineer competitive solutions/tools to improve the security landscape with testing and formal verification",
@@ -96,6 +116,7 @@ const Experience: React.FC = () => {
           className="experience-content"
         >
           <motion.div variants={itemVariants} className="experience-header">
+            <span className="section-eyebrow">02 // Experience</span>
             <h2 className="section-title">Professional Experience</h2>
             <p className="section-subtitle">
               My journey through various roles in blockchain security and cybersecurity education

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   EnvelopeIcon, 
-  PhoneIcon, 
   LinkedinIcon, 
   GithubIcon, 
   TwitterIcon,
@@ -33,6 +32,7 @@ const Contact: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -45,13 +45,13 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+    setIsSent(false);
+
+    // NOTE: there is no backend wired up yet — this only simulates a round trip.
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    
+
     setFormData({
       name: '',
       email: '',
@@ -59,6 +59,7 @@ const Contact: React.FC = () => {
       message: ''
     });
     setIsSubmitting(false);
+    setIsSent(true);
   };
 
   const contactInfo: ContactInfo[] = [
@@ -89,7 +90,7 @@ const Contact: React.FC = () => {
     {
       icon: MapMarkerIcon,
       label: 'Location',
-      value: 'India',
+      value: 'United Arab Emirates',
       link: null
     }
   ];
@@ -124,6 +125,7 @@ const Contact: React.FC = () => {
           className="contact-content"
         >
           <motion.div variants={itemVariants} className="contact-header">
+            <span className="section-eyebrow">07 // Contact</span>
             <h2 className="section-title">Get In Touch</h2>
             <p className="section-subtitle">
               Ready to discuss blockchain security, potential collaborations, or have questions about my work? 
@@ -146,8 +148,7 @@ const Contact: React.FC = () => {
                     key={index}
                     className="contact-method"
                     variants={itemVariants}
-                    whileHover={{ y: -2, scale: 1.05 }}
-                    data-tooltip={info.value}
+                    whileHover={{ y: -2 }}
                   >
                     {info.link ? (
                       <a 
@@ -269,6 +270,17 @@ const Contact: React.FC = () => {
                     </>
                   )}
                 </motion.button>
+
+                {isSent && (
+                  <motion.p
+                    className="form-status"
+                    role="status"
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    Thanks for reaching out — I'll get back to you within 24–48 hours.
+                  </motion.p>
+                )}
               </form>
             </motion.div>
           </div>
