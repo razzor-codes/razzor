@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { MicrophoneIcon, CalendarIcon, MapMarkerIcon, ExternalLinkIcon } from '../Icons';
@@ -191,6 +191,7 @@ const ProfessionalTalks: React.FC = () => {
           className="talks-content"
         >
           <motion.div variants={itemVariants} className="talks-header">
+            <span className="section-eyebrow">06 // Speaking</span>
             <h2 className="section-title">Professional Talks & Speaking</h2>
             <p className="section-subtitle">
               Sharing knowledge and insights with the global blockchain security community through conferences, workshops, and educational events

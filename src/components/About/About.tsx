@@ -39,6 +39,7 @@ const About: React.FC = () => {
           className="about-content"
         >
           <motion.div variants={itemVariants} className="about-header">
+            <span className="section-eyebrow">01 // About</span>
             <h2 className="section-title">About Me</h2>
             <p className="section-subtitle">
               Get to know more about who I am, what I do, and my journey in blockchain security
@@ -49,17 +50,19 @@ const About: React.FC = () => {
             <motion.div variants={itemVariants} className="about-text">
               <h3>My Story</h3>
               <p>
-                I'm a dedicated Blockchain Security Engineer currently working at Matter Labs/zkSync, 
-                where I focus on securing zero-knowledge proof systems and smart contracts. My journey 
-                in cybersecurity began with a Bachelor's degree in Computer Science from Mithibai College, 
-                Mumbai University (2014-2017), where I graduated with a CGPA of 6.7/7.0.
+                I'm a dedicated Blockchain Security Engineer at ADI Foundation, where I run in-house
+                code reviews, lead security audits, shape our AppSec policies and guidelines, and own
+                incident response. My journey in cybersecurity began with a Bachelor's degree in Computer
+                Science from Mithibai College, Mumbai University (2014-2017), where I graduated with a
+                CGPA of 6.7/7.0.
               </p>
-              
+
               <p>
-                With experience at leading security firms like ConsenSys Diligence and QuillAudits, 
-                I've conducted numerous security audits on complex protocols, helped teams adopt more 
-                secure system designs, and contributed to the blockchain security community through 
-                research and education.
+                Before ADI, I secured zero-knowledge proof systems and smart contracts at Matter Labs/zkSync,
+                audited independently as a freelance auditor, and worked at leading security firms like
+                ConsenSys Diligence and QuillAudits. Across those roles I've conducted numerous audits on
+                complex protocols, helped teams adopt more secure system designs, and contributed to the
+                blockchain security community through research and education.
               </p>
 
               <p>

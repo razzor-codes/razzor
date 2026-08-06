@@ -1,175 +1,180 @@
-.about {
-  background-color: var(--bg-secondary);
-}
+/* Section background and shared .section-title styling now live in App.css */
 
 .about-content {
-  max-width: 1000px;
+  max-width: 1060px;
   margin: 0 auto;
-}
-
-.about-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  border-radius: 2px;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
 }
 
 .about-body {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: start;
 }
 
+/* ---------- Narrative column ---------- */
+
 .about-text h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
+  font-size: var(--text-2xl);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.about-text p {
-  font-size: 1rem;
+/* Accent rule trailing the heading */
+.about-text h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-strong), transparent);
+}
+
+.about-text > p {
   color: var(--text-secondary);
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.15rem;
+  max-width: 68ch;
 }
+
+.about-text > p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ---------- Highlight cards ---------- */
 
 .about-highlights {
   display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 2.25rem;
 }
 
 .highlight-item {
-  padding: 1.5rem;
-  background-color: var(--bg-card);
-  border-radius: 0.75rem;
+  position: relative;
+  padding: 1.25rem 1.35rem 1.25rem 1.5rem;
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* Gradient spine on the left edge, revealed on hover */
+.highlight-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .highlight-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  transform: translateX(4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.highlight-item:hover::before {
+  opacity: 1;
 }
 
 .highlight-item h4 {
-  font-size: 1.1rem;
+  font-size: var(--text-base);
   font-weight: 600;
+  margin-bottom: 0.4rem;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
 }
 
 .highlight-item p {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--text-secondary);
+  line-height: 1.65;
   margin: 0;
-  line-height: 1.6;
 }
+
+/* ---------- Stats rail ---------- */
 
 .about-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
 }
 
-.stat-item {
-  text-align: center;
+.about-stats .stat-item {
+  position: relative;
   padding: 1.5rem;
-  background-color: var(--bg-card);
-  border-radius: 0.75rem;
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-card);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  text-align: center;
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
 }
 
-.stat-item:hover {
-  transform: translateY(-5px);
+.about-stats .stat-item:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--primary-color) 35%, transparent);
   box-shadow: var(--shadow-lg);
 }
 
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--primary-color);
+.about-stats .stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+.about-stats .stat-label {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--text-light);
 }
 
-@media (max-width: 1024px) {
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
   .about-body {
     grid-template-columns: 1fr;
-    gap: 3rem;
   }
-  
+
   .about-stats {
-    grid-template-columns: repeat(4, 1fr);
+    position: static;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-header {
-    margin-bottom: 2rem;
-  }
-  
-  .about-body {
-    gap: 2rem;
-  }
-  
+@media (max-width: 560px) {
   .about-stats {
     grid-template-columns: 1fr;
   }
-  
-  .highlight-item,
-  .stat-item {
-    padding: 1rem;
+
+  .about-stats .stat-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: left;
+    padding: 1rem 1.25rem;
+  }
+
+  .about-stats .stat-label {
+    margin-top: 0;
   }
 }
