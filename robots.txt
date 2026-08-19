@@ -1,10 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
-Disallow: /private/
 
 # Sitemap
-Sitemap: https://razzor-codes.github.io/razzor/sitemap.xml
+Sitemap: https://razzor.xyz/sitemap.xml
 
 # Specific instructions for major search engines
 User-agent: Googlebot
