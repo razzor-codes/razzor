@@ -18,6 +18,46 @@ interface Talk {
   featured?: boolean;
 }
 
+interface Hackathon {
+  event: string;
+  date: string;
+  location: string;
+  url: string;
+}
+
+// The role was the same at every event, so it is stated once above the grid
+// rather than repeated per card.
+const HACKATHON_ROLE =
+  'Mentored participating teams and reviewed submitted projects at ETHGlobal hackathons.';
+
+// Names, dates, and locations verified against each event's ETHGlobal page.
+const HACKATHONS: Hackathon[] = [
+  {
+    event: 'ETHGlobal Taipei',
+    date: 'Apr 2025',
+    location: 'Taipei, Taiwan',
+    url: 'https://ethglobal.com/events/taipei',
+  },
+  {
+    event: 'Circuit Breaker',
+    date: 'Feb 2024',
+    location: 'Online',
+    url: 'https://ethglobal.com/events/circuitbreaker',
+  },
+  {
+    event: 'ETHGlobal Istanbul',
+    date: 'Nov 2023',
+    location: 'Istanbul, Turkey',
+    url: 'https://ethglobal.com/events/istanbul',
+  },
+  {
+    event: 'ETHGlobal Paris',
+    date: 'Jul 2023',
+    location: 'Paris, France',
+    url: 'https://ethglobal.com/events/paris2023',
+  },
+];
+
 const ProfessionalTalks: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -26,16 +66,18 @@ const ProfessionalTalks: React.FC = () => {
 
   // Note: These are your actual professional talks and speaking engagements
   const talks: Talk[] = [
-    {
-      title: "PLONKIsh Verifiers and the Problem with 0s",
-      event: "TBD",
-      date: "TBD",
-      location: "TBD",
-      type: "conference",
-      description: "Advanced technical presentation on PLONKish verifiers, exploring the mathematical challenges and security implications when dealing with zero values in zero-knowledge proof systems.",
-      topics: ["PLONKish", "Zero-Knowledge Proofs", "Verifiers", "Cryptography"],
-      featured: true
-    },
+    // Hidden until the event, date, and venue are confirmed — it was rendering
+    // "TBD / TBD / TBD" as the first featured card in this section.
+    // {
+    //   title: "PLONKIsh Verifiers and the Problem with 0s",
+    //   event: "TBD",
+    //   date: "TBD",
+    //   location: "TBD",
+    //   type: "conference",
+    //   description: "Advanced technical presentation on PLONKish verifiers, exploring the mathematical challenges and security implications when dealing with zero values in zero-knowledge proof systems.",
+    //   topics: ["PLONKish", "Zero-Knowledge Proofs", "Verifiers", "Cryptography"],
+    //   featured: true
+    // },
     {
       title: "ZK Verifiers Exposed: Lessons from Real Bugs and Fixes",
       event: "ETHTaipei 2025",
@@ -192,7 +234,7 @@ const ProfessionalTalks: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="talks-header">
             <span className="section-eyebrow">06 // Speaking</span>
-            <h2 className="section-title">Professional Talks & Speaking</h2>
+            <h2 className="section-title">Speaking &amp; Community</h2>
             <p className="section-subtitle">
               Sharing knowledge and insights with the global blockchain security community through conferences, workshops, and educational events
             </p>
@@ -294,6 +336,36 @@ const ProfessionalTalks: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {HACKATHONS.length > 0 && (
+            <motion.div variants={itemVariants} className="hackathons">
+              <div className="hackathons-head">
+                <MicrophoneIcon />
+                <h3>Hackathon Mentorship &amp; Judging</h3>
+              </div>
+              <p className="hackathons-role">{HACKATHON_ROLE}</p>
+              <div className="hackathons-grid">
+                {HACKATHONS.map((h) => (
+                  <a
+                    className="hackathon-card"
+                    key={h.url}
+                    href={h.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="hackathon-event">
+                      {h.event}
+                      <ExternalLinkIcon />
+                    </span>
+                    <span className="hackathon-meta">
+                      <span className="hackathon-year">{h.date}</span>
+                      <span className="hackathon-location">{h.location}</span>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
           <motion.div variants={itemVariants} className="speaking-cta">
             <div className="cta-content">

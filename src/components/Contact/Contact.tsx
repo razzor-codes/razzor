@@ -11,6 +11,14 @@ import {
 } from '../Icons';
 import './Contact.css';
 
+// Set REACT_APP_FORMSPREE_ID in .env to enable real submissions.
+// Until then the form falls back to opening the visitor's mail client, so a
+// message is never silently dropped.
+const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID;
+const CONTACT_EMAIL = 'razzor@ciphershastra.com';
+
+type SubmitStatus = 'idle' | 'success' | 'mailto' | 'error';
+
 interface ContactInfo {
   icon: React.ComponentType;
   label: string;
@@ -32,7 +40,7 @@ const Contact: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -45,21 +53,44 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setIsSent(false);
+    setStatus('idle');
 
-    // NOTE: there is no backend wired up yet — this only simulates a round trip.
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // No backend configured — hand off to the visitor's mail client rather
+    // than pretending the message was delivered.
+    if (!FORMSPREE_ID) {
+      const body = `${formData.message}\n\n--\n${formData.name} <${formData.email}>`;
+      window.location.href =
+        `mailto:${CONTACT_EMAIL}` +
+        `?subject=${encodeURIComponent(formData.subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+      setIsSubmitting(false);
+      setStatus('mailto');
+      return;
+    }
 
-    console.log('Form submitted:', formData);
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
+      });
 
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    setIsSubmitting(false);
-    setIsSent(true);
+      if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setStatus('success');
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      setStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo: ContactInfo[] = [
@@ -271,16 +302,22 @@ const Contact: React.FC = () => {
                   )}
                 </motion.button>
 
-                {isSent && (
+                {status !== 'idle' && (
                   <motion.p
-                    className="form-status"
+                    className={`form-status ${status === 'error' ? 'is-error' : ''}`}
                     role="status"
                     initial={{ opacity: 0, y: -6 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    Thanks for reaching out — I'll get back to you within 24–48 hours.
+                    {status === 'success' &&
+                      "Thanks for reaching out — I'll get back to you within 24–48 hours."}
+                    {status === 'mailto' &&
+                      `Your mail app should have opened with the message ready to send. If it didn't, email me directly at ${CONTACT_EMAIL}.`}
+                    {status === 'error' &&
+                      `Something went wrong sending that. Please email me directly at ${CONTACT_EMAIL}.`}
                   </motion.p>
                 )}
+
               </form>
             </motion.div>
           </div>

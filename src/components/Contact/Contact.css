@@ -293,3 +293,9 @@ a.method-value:hover {
     gap: 0;
   }
 }
+
+/* Error variant of the submit result banner */
+.form-status.is-error {
+  border-color: rgba(244, 63, 94, 0.35);
+  background: rgba(244, 63, 94, 0.1);
+}

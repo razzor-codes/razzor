@@ -10,10 +10,10 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = "Razzor - Tejaswa Rastogi | Blockchain Security Engineer & Smart Contract Auditor",
-  description = "Expert Blockchain Security Engineer specializing in Zero-Knowledge Proofs, Smart Contract Auditing, and DeFi Security. Professional cybersecurity consultant with cutting-edge Web3 expertise.",
-  image = "/profile-image.jpg",
-  url = "https://razzor-codes.github.io/razzor/",
+  title = "Razzor (Tejaswa Rastogi) — Blockchain Security Engineer",
+  description = "Blockchain security engineer specializing in smart contract audits and zero-knowledge proof systems. Previously Matter Labs/zkSync and ConsenSys Diligence.",
+  image = "https://razzor.xyz/og-image.jpg",
+  url = "https://razzor.xyz/",
   type = "website"
 }) => {
   return (
