@@ -90,7 +90,7 @@ const About: React.FC = () => {
 
             <motion.div variants={itemVariants} className="about-stats">
               <div className="stat-item">
-                <div className="stat-number">4+</div>
+                <div className="stat-number">5+</div>
                 <div className="stat-label">Years Experience</div>
               </div>
               <div className="stat-item">

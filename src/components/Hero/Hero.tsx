@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// DownloadIcon is re-added alongside the resume button below when it returns.
-import { GithubIcon, LinkedinIcon, EnvelopeIcon, TwitterIcon } from '../Icons';
+import { GithubIcon, LinkedinIcon, EnvelopeIcon, DownloadIcon, TwitterIcon } from '../Icons';
 import './Hero.css';
 
 const STATS = [
   { value: '50+', label: 'Security Audits' },
-  { value: '4+', label: 'Years Experience' },
+  { value: '5+', label: 'Years Experience' },
   { value: '10+', label: 'Conference Talks' },
 ];
 
@@ -53,8 +52,13 @@ const Hero: React.FC = () => {
               </span>
             </motion.div>
 
+            {/* The visible greeting stays as-is; the appended clause is read by
+                crawlers and screen readers so the h1 carries the actual role. */}
             <motion.h1 className="hero-title" variants={fadeUp}>
               Hi, I'm <span className="highlight">Tejaswa Rastogi</span>
+              <span className="sr-only">
+                , Blockchain Security Engineer and Smart Contract Auditor
+              </span>
             </motion.h1>
 
             <motion.h2 className="hero-subtitle" variants={fadeUp}>
@@ -74,11 +78,8 @@ const Hero: React.FC = () => {
               <a href="#projects" className="btn btn-outline">
                 View Work
               </a>
-              {/* Hidden until the CV is refreshed — drop in the new PDF under
-                  public/, update the filename here, and uncomment. */}
-              {/*
               <a
-                href={`${process.env.PUBLIC_URL}/Tej_CV_2025.pdf`}
+                href={`${process.env.PUBLIC_URL}/Tej_CV_2026.pdf`}
                 className="btn btn-secondary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,7 +87,6 @@ const Hero: React.FC = () => {
                 <DownloadIcon />
                 Resume
               </a>
-              */}
             </motion.div>
 
             <motion.div className="hero-stats" variants={fadeUp}>
@@ -123,13 +123,23 @@ const Hero: React.FC = () => {
           >
             <div className="profile-frame">
               <div className="profile-image-container">
-                <img
-                  src={`${process.env.PUBLIC_URL}/profile-image.jpg`}
-                  alt="Tejaswa Rastogi, Blockchain Security Engineer"
-                  className="profile-image"
-                  width={400}
-                  height={500}
-                />
+                {/* WebP first (~29KB vs ~99KB); JPEG kept as a fallback.
+                    Preloaded in index.html so it is not discovered only after React runs. */}
+                <picture>
+                  <source
+                    srcSet={`${process.env.PUBLIC_URL}/profile-image.webp`}
+                    type="image/webp"
+                  />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/profile-image.jpg`}
+                    alt="Tejaswa Rastogi, Blockchain Security Engineer"
+                    className="profile-image"
+                    width={400}
+                    height={500}
+                    fetchPriority="high"
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               {FLOATING_CHIPS.map((chip, index) => (
