@@ -142,7 +142,7 @@ const Projects: React.FC = () => {
           className="projects-content"
         >
           <motion.div variants={itemVariants} className="projects-header">
-            <span className="section-eyebrow">04 // Work</span>
+            <span className="section-eyebrow">02 // Work</span>
             <h2 className="section-title">Featured Work & Projects</h2>
             <p className="section-subtitle">
               Selected security audits, research projects, and contributions to the blockchain security ecosystem

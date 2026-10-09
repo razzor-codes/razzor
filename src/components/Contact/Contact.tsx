@@ -115,8 +115,8 @@ const Contact: React.FC = () => {
     {
       icon: GithubIcon,
       label: 'GitHub',
-      value: 'github.com/razzorsec',
-      link: 'https://github.com/razzorsec'
+      value: 'github.com/razzor-codes',
+      link: 'https://github.com/razzor-codes'
     },
     {
       icon: MapMarkerIcon,

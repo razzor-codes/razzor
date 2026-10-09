@@ -8,65 +8,6 @@
   overflow: hidden;
 }
 
-/* ---------- Ambient background ---------- */
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.bg-orb {
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.5;
-  animation: orb-float 14s ease-in-out infinite;
-}
-
-:root[data-theme='dark'] .bg-orb {
-  opacity: 0.32;
-}
-
-.bg-orb-1 {
-  width: 34rem;
-  height: 34rem;
-  background: radial-gradient(circle, var(--primary-color), transparent 68%);
-  top: -8rem;
-  left: -10rem;
-}
-
-.bg-orb-2 {
-  width: 26rem;
-  height: 26rem;
-  background: radial-gradient(circle, var(--accent-color), transparent 68%);
-  bottom: -6rem;
-  right: -6rem;
-  animation-delay: -5s;
-}
-
-.bg-orb-3 {
-  width: 20rem;
-  height: 20rem;
-  background: radial-gradient(circle, var(--accent-secondary), transparent 68%);
-  top: 45%;
-  left: 45%;
-  animation-delay: -9s;
-}
-
-@keyframes orb-float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(2rem, -2.5rem, 0) scale(1.08);
-  }
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
@@ -130,43 +71,48 @@
 .hero-title {
   font-family: var(--font-display);
   font-size: var(--text-5xl);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-  margin-bottom: 0.75rem;
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
   color: var(--text-primary);
 }
 
+/* The name sits on its own line in italic, the accent colour on dark */
 .hero-title .highlight {
-  display: inline-block;
-  background: var(--gradient-text);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  animation: gradient-pan 8s linear infinite;
+  font-style: italic;
+  color: var(--primary-color);
 }
 
-@keyframes gradient-pan {
-  to {
-    background-position: 200% center;
-  }
+/* On cream, pale copper works as a highlighter stroke behind ink text */
+:root:not([data-theme='dark']) .hero-title .highlight {
+  color: var(--text-primary);
+  background: linear-gradient(transparent 62%, var(--marker) 62% 90%, transparent 90%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero-subtitle {
   font-family: var(--font-mono);
-  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
+.hero-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .hero-subtitle::before {
-  content: '> ';
-  color: var(--accent-color);
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--primary-color);
 }
 
 .hero-description {
@@ -195,14 +141,10 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 0 0;
   margin-bottom: 2rem;
   max-width: 32rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  background: var(--gradient-card);
-  backdrop-filter: var(--backdrop-blur);
-  -webkit-backdrop-filter: var(--backdrop-blur);
+  border-top: 1px solid var(--border-color);
 }
 
 .hero-stats .stat {
@@ -224,15 +166,10 @@
 
 .hero-stats .stat-number {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 1.85rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--text-primary);
 }
 
 .hero-stats .stat-label {
@@ -254,8 +191,8 @@
   place-items: center;
   width: 2.6rem;
   height: 2.6rem;
-  border-radius: var(--radius);
-  background: var(--bg-card);
+  border-radius: var(--radius-full);
+  background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   font-size: 1.05rem;
@@ -265,8 +202,7 @@
 
 .hero-social .social-link:hover {
   color: var(--primary-color);
-  border-color: color-mix(in srgb, var(--primary-color) 45%, transparent);
-  background: var(--tint-primary);
+  border-color: var(--primary-color);
   transform: translateY(-3px);
 }
 
@@ -283,24 +219,8 @@
   width: min(100%, 22rem);
 }
 
-/* Gradient ring drawn as a padded backdrop behind the image */
 .profile-image-container {
   position: relative;
-  padding: 3px;
-  border-radius: var(--radius-xl);
-  background: var(--gradient-accent);
-  box-shadow: var(--shadow-xl);
-}
-
-.profile-image-container::after {
-  content: '';
-  position: absolute;
-  inset: -1.5rem;
-  border-radius: calc(var(--radius-xl) + 1rem);
-  background: var(--gradient-accent);
-  filter: blur(45px);
-  opacity: 0.22;
-  z-index: -1;
 }
 
 .profile-image {
@@ -311,42 +231,15 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
-  border-radius: calc(var(--radius-xl) - 2px);
+  border-radius: var(--radius-lg);
   background: var(--bg-tertiary);
   display: block;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter var(--transition-slow);
 }
 
-/* Floating capability chips around the portrait */
-.floating-chip {
-  position: absolute;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-full);
-  background: var(--surface-glass);
-  backdrop-filter: var(--backdrop-blur);
-  -webkit-backdrop-filter: var(--backdrop-blur);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--text-primary);
-  white-space: nowrap;
-  z-index: 2;
-}
-
-.chip-zk {
-  top: 12%;
-  left: -2.5rem;
-}
-
-.chip-solidity {
-  top: 46%;
-  right: -2rem;
-}
-
-.chip-audit {
-  bottom: 9%;
-  left: -3rem;
+.profile-frame:hover .profile-image {
+  filter: none;
 }
 
 /* ---------- Scroll cue ---------- */
@@ -441,23 +334,6 @@
 
   .stat:not(:last-child)::after {
     right: -0.25rem;
-  }
-
-  .floating-chip {
-    font-size: 0.65rem;
-    padding: 0.35rem 0.6rem;
-  }
-
-  .chip-zk {
-    left: -1rem;
-  }
-
-  .chip-solidity {
-    right: -0.75rem;
-  }
-
-  .chip-audit {
-    left: -1.25rem;
   }
 }
 

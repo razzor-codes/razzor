@@ -208,14 +208,15 @@ const ProfessionalTalks: React.FC = () => {
   };
 
   const getTypeColor = (type: string) => {
+    // Theme tokens, so the labels follow the light/dark palette
     const colors = {
-      conference: '#667eea',
-      workshop: '#f093fb',
-      webinar: '#4facfe',
-      meetup: '#43e97b',
-      panel: '#fa709a'
+      conference: 'var(--primary-color)',
+      workshop: 'var(--text-secondary)',
+      webinar: 'var(--text-secondary)',
+      meetup: 'var(--text-secondary)',
+      panel: 'var(--text-secondary)'
     };
-    return colors[type as keyof typeof colors] || '#667eea';
+    return colors[type as keyof typeof colors] || 'var(--primary-color)';
   };
 
   const getTypeIcon = (type: string) => {
@@ -233,7 +234,7 @@ const ProfessionalTalks: React.FC = () => {
           className="talks-content"
         >
           <motion.div variants={itemVariants} className="talks-header">
-            <span className="section-eyebrow">06 // Speaking</span>
+            <span className="section-eyebrow">04 // Speaking</span>
             <h2 className="section-title">Speaking &amp; Community</h2>
             <p className="section-subtitle">
               Sharing knowledge and insights with the global blockchain security community through conferences, workshops, and educational events

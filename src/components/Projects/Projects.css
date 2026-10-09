@@ -74,7 +74,7 @@
 
 .project-card:hover .project-icon {
   background: var(--gradient-primary);
-  color: #fff;
+  color: var(--on-accent);
   transform: scale(1.05);
 }
 
