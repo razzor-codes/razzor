@@ -25,10 +25,9 @@ const Experience: React.FC = () => {
       period: "June 2026 - Present",
       current: true,
       description: [
-        "Perform in-house code reviews across the organisation's codebases",
-        "Lead blockchain security audits and secure development efforts",
-        "Define AppSec policies, procedures, and engineering guidelines",
-        "Own incident response and security triaging"
+        "Lead security audits and code reviews across the organisation's codebases",
+        "Building the AppSec programme: policies, procedures and engineering guidelines",
+        "Own incident response and security triage"
       ]
     },
     {
@@ -36,8 +35,8 @@ const Experience: React.FC = () => {
       company: "Independent",
       period: "August 2025 - June 2026",
       description: [
-        "Delivered independent security audits for a range of blockchain projects",
-        "Advised protocol teams on remediation and secure design decisions"
+        "Delivered independent security audits for blockchain protocols",
+        "Guided teams through fixes and safer design decisions after each audit"
       ]
     },
     {
@@ -45,10 +44,10 @@ const Experience: React.FC = () => {
       company: "Matter Labs/zkSync",
       period: "March 2024 - August 2025",
       description: [
-        "Perform Security Reviews on existing and new smart contracts and circuits",
-        "Research and Engineer competitive solutions/tools to improve the security landscape with testing and formal verification",
-        "Lead external audits and communications",
-        "Share new research at security conferences"
+        "Security-reviewed zkSync's smart contracts and ZK circuits, new and existing",
+        "Built testing and formal-verification tooling to catch bugs earlier",
+        "Led external audits as the point of contact between zkSync and audit firms",
+        "Presented ZK verifier bug research at ETHTaipei 2025"
       ]
     },
     {
@@ -56,11 +55,10 @@ const Experience: React.FC = () => {
       company: "ConsenSys Diligence",
       period: "June 2022 - Feb 2024",
       description: [
-        "Perform Security Audits on Complex Protocols",
-        "Help the auditee team to adopt a better and more secure system design",
-        "Research and Contribute to the in-house security tools",
-        "Research new attack vectors, and share the knowledge with fellow auditors in the team",
-        "Speak at leading security conferences sharing any new research or building relations with new protocols"
+        "Audited complex DeFi and ZK protocols, including Linea's PLONK verifier and canonical token bridge, Gearbox V2 and Forta delegated staking",
+        "Helped audited teams move to safer system designs, not just patch individual bugs",
+        "Contributed to Diligence's in-house security tooling",
+        "Researched new attack vectors and shared them with the team and on stage at ETHDubai, Nullc0n Berlin and c0c0n"
       ]
     },
     {
@@ -68,9 +66,9 @@ const Experience: React.FC = () => {
       company: "QuillAudits",
       period: "May 2021 - June 2022",
       description: [
-        "Conduct Smart Contract Audits: Manual Review, Functional/Automated/Fuzz Testing",
-        "Client Interactions: Providing suggestions to resolve the issues reported during an audit",
-        "Interviews: Take interviews for new joiners in order to bring new talent in"
+        "Audited DeFi protocols including YoloRekt and the Nord Finance suite, using manual review plus functional, automated and fuzz testing",
+        "Worked with clients on fixes for the issues each audit found",
+        "Interviewed candidates to grow the audit team"
       ]
     },
     {
@@ -78,10 +76,8 @@ const Experience: React.FC = () => {
       company: "TSPL's Explorium",
       period: "Jul 2018 - May 2019",
       description: [
-        "Prepared and delivered lectures on programming, networking, cyber-security, and software design",
-        "Planned, evaluated, and revised curricula and course materials",
-        "Collaborated with colleagues to address teaching and research issues",
-        "Maintained computer equipment used in instruction"
+        "Taught programming, networking, cyber-security and software design",
+        "Planned and revised the curriculum and course materials"
       ]
     }
   ];
@@ -116,7 +112,7 @@ const Experience: React.FC = () => {
           className="experience-content"
         >
           <motion.div variants={itemVariants} className="experience-header">
-            <span className="section-eyebrow">02 // Experience</span>
+            <span className="section-eyebrow">03 // Experience</span>
             <h2 className="section-title">Professional Experience</h2>
             <p className="section-subtitle">
               My journey through various roles in blockchain security and cybersecurity education

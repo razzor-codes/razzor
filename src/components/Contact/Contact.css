@@ -222,7 +222,7 @@ a.method-value:hover {
   border: none;
   border-radius: var(--radius);
   background: var(--gradient-primary);
-  color: #fff;
+  color: var(--on-accent);
   font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
@@ -232,7 +232,7 @@ a.method-value:hover {
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px -12px rgba(43, 82, 224, 0.55);
+  opacity: 0.88;
 }
 
 .submit-btn:disabled {
@@ -248,8 +248,8 @@ a.method-value:hover {
 .spinner {
   width: 0.95rem;
   height: 0.95rem;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  border-top-color: #fff;
+  border: 2px solid color-mix(in srgb, currentColor 35%, transparent);
+  border-top-color: currentColor;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }

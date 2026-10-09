@@ -53,11 +53,11 @@ function App() {
         <Header />
         <Hero />
         <About />
-        <Experience />
-        <Education />
         <Projects />
-        <Skills />
+        <Experience />
         <ProfessionalTalks />
+        <Skills />
+        <Education />
         <Contact />
         <Footer />
         

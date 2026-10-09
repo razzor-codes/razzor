@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
       icon: GithubIcon,
-      href: 'https://github.com/razzorsec',
+      href: 'https://github.com/razzor-codes',
       label: 'GitHub'
     },
     {
@@ -40,8 +40,9 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Talks', href: '#talks' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' }
   ];

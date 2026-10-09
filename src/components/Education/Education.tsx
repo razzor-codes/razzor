@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCapIcon, AwardIcon, BookIcon } from '../Icons';
+import { GraduationCapIcon, AwardIcon } from '../Icons';
 import './Education.css';
 
 interface EducationItem {
@@ -10,8 +10,6 @@ interface EducationItem {
   location: string;
   period: string;
   gpa?: string;
-  description: string;
-  achievements?: string[];
 }
 
 interface CertificationItem {
@@ -19,7 +17,6 @@ interface CertificationItem {
   issuer: string;
   date: string;
   credentialId?: string;
-  description: string;
 }
 
 const Education: React.FC = () => {
@@ -34,14 +31,7 @@ const Education: React.FC = () => {
       institution: "Mithibai College",
       location: "Mumbai University, India",
       period: "2014 - 2017",
-      gpa: "6.7/7.0",
-      description: "Comprehensive computer science education with focus on algorithms, data structures, software engineering, and computer security fundamentals.",
-      achievements: [
-        "Strong foundation in programming and software development",
-        "Early exposure to cybersecurity concepts",
-        "Participated in coding competitions and hackathons",
-        "Developed interest in blockchain and cryptography"
-      ]
+      gpa: "6.7/7.0"
     }
   ];
 
@@ -49,50 +39,42 @@ const Education: React.FC = () => {
     {
       name: "Certified Ethical Hacker (CEH)",
       issuer: "EC-Council",
-      date: "October 2020",
-      description: "Comprehensive ethical hacking and penetration testing certification covering advanced attack techniques and defensive methodologies"
+      date: "October 2020"
     },
     {
       name: "Blockchain Security",
       issuer: "Infosec",
-      date: "August 2020",
-      description: "Specialized certification focusing on blockchain technology security, smart contract vulnerabilities, and cryptocurrency security"
+      date: "August 2020"
     },
     {
       name: "Autopsy Digital Forensics",
       issuer: "Basis Technology",
-      date: "June 2020",
-      description: "Digital forensics certification covering file system analysis, data recovery, and forensic investigation techniques"
+      date: "June 2020"
     },
     {
       name: "CCNA CyberOps",
       issuer: "CISCO",
-      date: "March 2018",
-      description: "Cybersecurity operations certification covering security monitoring, incident response, and threat analysis"
+      date: "March 2018"
     },
     {
       name: "Python3 Programming",
       issuer: "Sololearn",
-      date: "August 2017",
-      description: "Python programming certification demonstrating proficiency in Python development and scripting"
+      date: "August 2017"
     },
     {
       name: "Network Devices",
       issuer: "Cybrary",
-      date: "August 2017",
-      description: "Network infrastructure and device management certification covering routing, switching, and network security"
+      date: "August 2017"
     },
     {
       name: "Cross-Site Scripting (XSS)",
       issuer: "Cybrary",
-      date: "August 2017",
-      description: "Web application security certification focusing on XSS vulnerabilities, exploitation techniques, and mitigation strategies"
+      date: "August 2017"
     },
     {
       name: "MTA: Security Fundamentals",
       issuer: "Microsoft",
-      date: "November 2016",
-      description: "Microsoft Technology Associate certification covering fundamental security concepts and Windows security architecture"
+      date: "November 2016"
     }
   ];
 
@@ -135,7 +117,7 @@ const Education: React.FC = () => {
           className="education-content"
         >
           <motion.div variants={itemVariants} className="education-header">
-            <span className="section-eyebrow">03 // Education</span>
+            <span className="section-eyebrow">06 // Education</span>
             <h2 className="section-title">Education & Certifications</h2>
             <p className="section-subtitle">
               Academic background and professional certifications in cybersecurity and blockchain technology
@@ -178,19 +160,6 @@ const Education: React.FC = () => {
                         <span className="gpa-value">{item.gpa}</span>
                       </div>
                     )}
-                    
-                    <p className="education-description">{item.description}</p>
-                    
-                    {item.achievements && (
-                      <div className="achievements">
-                        <h6>Key Highlights:</h6>
-                        <ul>
-                          {item.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex}>{achievement}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                   </div>
                 </motion.div>
               ))}
@@ -222,7 +191,6 @@ const Education: React.FC = () => {
                       <span className="cert-issuer">{cert.issuer}</span>
                       <span className="cert-date">{cert.date}</span>
                     </div>
-                    <p className="cert-description">{cert.description}</p>
                     {cert.credentialId && (
                       <div className="credential-id">
                         ID: {cert.credentialId}
@@ -231,42 +199,6 @@ const Education: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Continuous Learning */}
-          <motion.div variants={itemVariants} className="learning-section">
-            <div className="section-header">
-              <BookIcon />
-              <h3>Continuous Learning</h3>
-            </div>
-            
-            <div className="learning-content">
-              <p>
-                Committed to staying current with the rapidly evolving cybersecurity and blockchain landscape through:
-              </p>
-              
-              <div className="learning-areas">
-                <div className="learning-item">
-                  <h5>Research & Publications</h5>
-                  <p>Active research in zero-knowledge proofs, formal verification, and novel attack vectors</p>
-                </div>
-                
-                <div className="learning-item">
-                  <h5>Conference Participation</h5>
-                  <p>Regular attendance at security conferences, workshops, and blockchain summits</p>
-                </div>
-                
-                <div className="learning-item">
-                  <h5>Open Source Contributions</h5>
-                  <p>Contributing to security tools, educational resources, and blockchain protocols</p>
-                </div>
-                
-                <div className="learning-item">
-                  <h5>Community Engagement</h5>
-                  <p>Creating CTF challenges, mentoring, and sharing knowledge through professional talks</p>
-                </div>
-              </div>
             </div>
           </motion.div>
         </motion.div>

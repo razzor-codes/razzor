@@ -10,16 +10,10 @@ const STATS = [
 ];
 
 const SOCIALS = [
-  { href: 'https://github.com/razzorsec', label: 'GitHub', Icon: GithubIcon },
+  { href: 'https://github.com/razzor-codes', label: 'GitHub', Icon: GithubIcon },
   { href: 'https://linkedin.com/in/razzor', label: 'LinkedIn', Icon: LinkedinIcon },
   { href: 'https://x.com/razzor_tweet', label: 'Twitter', Icon: TwitterIcon },
   { href: 'mailto:razzor@ciphershastra.com', label: 'Email', Icon: EnvelopeIcon },
-];
-
-const FLOATING_CHIPS = [
-  { text: 'Zero-Knowledge', className: 'chip-zk' },
-  { text: 'Solidity', className: 'chip-solidity' },
-  { text: 'Smart Contract Audits', className: 'chip-audit' },
 ];
 
 const fadeUp = {
@@ -30,13 +24,6 @@ const fadeUp = {
 const Hero: React.FC = () => {
   return (
     <section id="home" className="hero">
-      {/* Ambient colour washes behind the content */}
-      <div className="hero-background" aria-hidden="true">
-        <span className="bg-orb bg-orb-1" />
-        <span className="bg-orb bg-orb-2" />
-        <span className="bg-orb bg-orb-3" />
-      </div>
-
       <div className="container">
         <div className="hero-content">
           <motion.div
@@ -55,7 +42,9 @@ const Hero: React.FC = () => {
             {/* The visible greeting stays as-is; the appended clause is read by
                 crawlers and screen readers so the h1 carries the actual role. */}
             <motion.h1 className="hero-title" variants={fadeUp}>
-              Hi, I'm <span className="highlight">Tejaswa Rastogi</span>
+              Hi, I'm
+              <br />
+              <span className="highlight">Tejaswa Rastogi</span>
               <span className="sr-only">
                 , Blockchain Security Engineer and Smart Contract Auditor
               </span>
@@ -141,22 +130,6 @@ const Hero: React.FC = () => {
                   />
                 </picture>
               </div>
-
-              {FLOATING_CHIPS.map((chip, index) => (
-                <motion.span
-                  key={chip.text}
-                  className={`floating-chip ${chip.className}`}
-                  animate={{ y: [0, -9, 0] }}
-                  transition={{
-                    duration: 4 + index,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: index * 0.7,
-                  }}
-                >
-                  {chip.text}
-                </motion.span>
-              ))}
             </div>
           </motion.div>
         </div>
