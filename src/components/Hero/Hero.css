@@ -234,12 +234,6 @@
   border-radius: var(--radius-lg);
   background: var(--bg-tertiary);
   display: block;
-  filter: grayscale(1) contrast(1.05);
-  transition: filter var(--transition-slow);
-}
-
-.profile-frame:hover .profile-image {
-  filter: none;
 }
 
 /* ---------- Scroll cue ---------- */
