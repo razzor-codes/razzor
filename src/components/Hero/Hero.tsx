@@ -6,7 +6,7 @@ import './Hero.css';
 const STATS = [
   { value: '50+', label: 'Security Audits' },
   { value: '5+', label: 'Years Experience' },
-  { value: '10+', label: 'Conference Talks' },
+  { value: '9', label: 'Conference Talks' },
 ];
 
 const SOCIALS = [
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
             <motion.p className="hero-description" variants={fadeUp}>
               I break and harden smart contracts and zero-knowledge systems. Currently
               Blockchain Security Engineer at <strong>ADI Foundation</strong> — previously
-              Matter Labs/zkSync, ConsenSys Diligence, and QuillAudits.
+              Reckong Tech, Matter Labs/zkSync, ConsenSys Diligence, and QuillAudits.
             </motion.p>
 
             <motion.div className="hero-buttons" variants={fadeUp}>
