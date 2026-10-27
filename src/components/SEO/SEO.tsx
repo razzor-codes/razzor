@@ -12,7 +12,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   title = "Razzor (Tejaswa Rastogi) — Blockchain Security Engineer",
   description = "Blockchain security engineer specializing in smart contract audits and zero-knowledge proof systems. Previously Matter Labs/zkSync and ConsenSys Diligence.",
-  image = "https://razzor.xyz/og-image.jpg",
+  image = "https://razzor.xyz/og-image.jpg?v=2",
   url = "https://razzor.xyz/",
   type = "website"
 }) => {
