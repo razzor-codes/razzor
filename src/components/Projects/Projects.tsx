@@ -27,6 +27,18 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "ZK Stack Tracer",
+      description: "CLI and local web app for on-chain forensics: one transaction hash or address in, the whole L1 ↔ L2 journey out (deposits, withdrawals and claims, failed deposits, upgrades), decoded and timed, on EraVM and ZKsync OS chains. Demo on request.",
+      technologies: ["TypeScript", "ZK Stack", "Forensics", "CI"],
+      type: "tool"
+    },
+    {
+      title: "Warden",
+      description: "Access control for AI coding agents: hooks into every Claude Code tool call (file reads, shell commands, MCP calls) and returns allow, deny or ask from deterministic Cedar policies, with session taint tracking.",
+      technologies: ["AI Agent Security", "Claude Code", "Cedar", "MCP"],
+      type: "tool"
+    },
+    {
       title: "CipherShastra",
       description: "Founded a blockchain security company providing comprehensive smart contract auditing services and security consulting.",
       technologies: ["Security Consulting", "Smart Contracts", "Team Building"],

@@ -58,8 +58,8 @@ const About: React.FC = () => {
               </p>
 
               <p>
-                Before ADI, I secured zero-knowledge proof systems and smart contracts at Matter Labs/zkSync,
-                audited independently as a freelance auditor, and worked at leading security firms like
+                Before ADI, I led blockchain security at Reckong Tech, secured zero-knowledge proof systems
+                and smart contracts at Matter Labs/zkSync, and worked at leading security firms like
                 ConsenSys Diligence and QuillAudits. Across those roles I've conducted numerous audits on
                 complex protocols, helped teams adopt more secure system designs, and contributed to the
                 blockchain security community through research and education.

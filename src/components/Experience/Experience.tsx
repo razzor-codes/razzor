@@ -27,16 +27,21 @@ const Experience: React.FC = () => {
       description: [
         "Lead security audits and code reviews across the organisation's codebases",
         "Building the AppSec programme: policies, procedures and engineering guidelines",
-        "Own incident response and security triage"
+        "Own incident response and security triage",
+        "Added automated security checks to CI/CD pipelines to catch vulnerabilities before release",
+        "Threat-model new systems before launch, reviewing backend services, APIs and infrastructure alongside smart contracts",
+        "Use AI tooling to speed up code review and security triage"
       ]
     },
     {
-      title: "Freelance Smart Contract Auditor",
-      company: "Independent",
-      period: "August 2025 - June 2026",
+      title: "Lead Security Engineer (Blockchain)",
+      company: "Reckong Tech",
+      period: "Sep 2025 - May 2026",
       description: [
-        "Delivered independent security audits for blockchain protocols",
-        "Guided teams through fixes and safer design decisions after each audit"
+        "Ran end-to-end security reviews of smart contracts and ZK circuits and set company-wide security policies",
+        "Built custom tools and internal security libraries to harden the development lifecycle",
+        "Managed external audits with top-tier firms as the primary security liaison, overseeing remediation",
+        "Threat-modelled new protocols and features before launch so security requirements were set early"
       ]
     },
     {
@@ -47,6 +52,8 @@ const Experience: React.FC = () => {
         "Security-reviewed zkSync's smart contracts and ZK circuits, new and existing",
         "Built testing and formal-verification tooling to catch bugs earlier",
         "Led external audits as the point of contact between zkSync and audit firms",
+        "Reviewed L1 ↔ L2 bridge and messaging contracts",
+        "Handled incident response and security triage, including external bug bounty reports",
         "Presented ZK verifier bug research at ETHTaipei 2025"
       ]
     },
@@ -57,7 +64,8 @@ const Experience: React.FC = () => {
       description: [
         "Audited complex DeFi and ZK protocols, including Linea's PLONK verifier and canonical token bridge, Gearbox V2 and Forta delegated staking",
         "Helped audited teams move to safer system designs, not just patch individual bugs",
-        "Contributed to Diligence's in-house security tooling",
+        "Contributed to Diligence's in-house security tooling, building analysis tools and vulnerability detectors used in audits",
+        "Wrote threat models and design reviews for audited teams",
         "Researched new attack vectors and shared them with the team and on stage at ETHDubai, Nullc0n Berlin and c0c0n"
       ]
     },
