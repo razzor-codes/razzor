@@ -39,6 +39,18 @@ const Projects: React.FC = () => {
       type: "tool"
     },
     {
+      title: "AI-assisted review pipeline",
+      description: "Turns a codebase into ranked audit leads in stages: threat model, scope, code map, brief, a two-model review and a deep pass on the strongest leads. Every lead is checked by hand against the code and live chain state. Tested on real past bugs and used on live Immunefi and HackenProof programs.",
+      technologies: ["AI-Assisted Auditing", "Bug Bounty", "LLMs", "Python"],
+      type: "tool"
+    },
+    {
+      title: "DVZKV",
+      description: "A CTF built on real bug classes from my verifier audits: players break deliberately vulnerable PLONK, PLONKish and FFLONK verifiers in Foundry challenges, then prove the solve on-chain to mint a soulbound badge.",
+      technologies: ["ZK Verifiers", "PLONK", "FFLONK", "Foundry", "CTF"],
+      type: "research"
+    },
+    {
       title: "CipherShastra",
       description: "Founded an open-source platform for learning smart contract security through hands-on CTF challenges.",
       technologies: ["CTF", "Smart Contracts", "Education"],
