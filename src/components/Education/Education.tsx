@@ -47,34 +47,9 @@ const Education: React.FC = () => {
       date: "August 2020"
     },
     {
-      name: "Autopsy Digital Forensics",
-      issuer: "Basis Technology",
-      date: "June 2020"
-    },
-    {
       name: "CCNA CyberOps",
-      issuer: "CISCO",
+      issuer: "Cisco",
       date: "March 2018"
-    },
-    {
-      name: "Python3 Programming",
-      issuer: "Sololearn",
-      date: "August 2017"
-    },
-    {
-      name: "Network Devices",
-      issuer: "Cybrary",
-      date: "August 2017"
-    },
-    {
-      name: "Cross-Site Scripting (XSS)",
-      issuer: "Cybrary",
-      date: "August 2017"
-    },
-    {
-      name: "MTA: Security Fundamentals",
-      issuer: "Microsoft",
-      date: "November 2016"
     }
   ];
 

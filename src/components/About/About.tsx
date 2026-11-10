@@ -98,8 +98,8 @@ const About: React.FC = () => {
                 <div className="stat-label">Security Audits</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">8</div>
-                <div className="stat-label">Certifications</div>
+                <div className="stat-number">~$500k</div>
+                <div className="stat-label">Recovered in Incident Response</div>
               </div>
             </motion.div>
           </div>
