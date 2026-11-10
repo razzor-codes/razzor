@@ -22,8 +22,7 @@ const Experience: React.FC = () => {
     {
       title: "Blockchain Security Engineer",
       company: "ADI Foundation",
-      period: "June 2026 - Present",
-      current: true,
+      period: "June 2026 - Nov 2026",
       description: [
         "Lead security audits and code reviews across the organisation's codebases",
         "Building the AppSec programme: policies, procedures and engineering guidelines",

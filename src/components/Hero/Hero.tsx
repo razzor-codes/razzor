@@ -13,7 +13,7 @@ const SOCIALS = [
   { href: 'https://github.com/razzor-codes', label: 'GitHub', Icon: GithubIcon },
   { href: 'https://linkedin.com/in/razzor', label: 'LinkedIn', Icon: LinkedinIcon },
   { href: 'https://x.com/razzor_tweet', label: 'Twitter', Icon: TwitterIcon },
-  { href: 'mailto:razzor@ciphershastra.com', label: 'Email', Icon: EnvelopeIcon },
+  { href: 'mailto:hello.razzor@gmail.com', label: 'Email', Icon: EnvelopeIcon },
 ];
 
 const fadeUp = {
@@ -55,8 +55,8 @@ const Hero: React.FC = () => {
             </motion.h2>
 
             <motion.p className="hero-description" variants={fadeUp}>
-              I break and harden smart contracts and zero-knowledge systems. Currently
-              Blockchain Security Engineer at <strong>ADI Foundation</strong> — previously
+              I break and harden smart contracts and zero-knowledge systems. Most recently
+              Blockchain Security Engineer at <strong>ADI Foundation</strong>; before that
               Reckong Tech, Matter Labs/zkSync, ConsenSys Diligence, and QuillAudits.
             </motion.p>
 

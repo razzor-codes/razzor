@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
     },
     {
       icon: EnvelopeIcon,
-      href: 'mailto:razzor@ciphershastra.com',
+      href: 'mailto:hello.razzor@gmail.com',
       label: 'Email'
     }
   ];

@@ -50,8 +50,8 @@ const About: React.FC = () => {
             <motion.div variants={itemVariants} className="about-text">
               <h3>My Story</h3>
               <p>
-                I'm a dedicated Blockchain Security Engineer at ADI Foundation, where I run in-house
-                code reviews, lead security audits, shape our AppSec policies and guidelines, and own
+                I'm a Blockchain Security Engineer. Most recently, at ADI Foundation, I ran in-house
+                code reviews, led security audits, shaped the AppSec policies and guidelines, and owned
                 incident response. My journey in cybersecurity began with a Bachelor's degree in Computer
                 Science from Mithibai College, Mumbai University (2014-2017), where I graduated with a
                 CGPA of 6.7/7.0.

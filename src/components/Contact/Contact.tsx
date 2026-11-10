@@ -15,7 +15,7 @@ import './Contact.css';
 // Until then the form falls back to opening the visitor's mail client, so a
 // message is never silently dropped.
 const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID;
-const CONTACT_EMAIL = 'razzor@ciphershastra.com';
+const CONTACT_EMAIL = 'hello.razzor@gmail.com';
 
 type SubmitStatus = 'idle' | 'success' | 'mailto' | 'error';
 
@@ -97,8 +97,8 @@ const Contact: React.FC = () => {
     {
       icon: EnvelopeIcon,
       label: 'Email',
-      value: 'razzor@ciphershastra.com',
-      link: 'mailto:razzor@ciphershastra.com'
+      value: 'hello.razzor@gmail.com',
+      link: 'mailto:hello.razzor@gmail.com'
     },
     {
       icon: LinkedinIcon,
@@ -218,7 +218,7 @@ const Contact: React.FC = () => {
               <div className="availability">
                 <h4>Availability</h4>
                 <p>
-                  Currently open for consulting opportunities, security audits, and speaking 
+                  Open to full-time security roles, consulting, security audits and speaking
                   engagements. Response time is typically within 24-48 hours.
                 </p>
               </div>
