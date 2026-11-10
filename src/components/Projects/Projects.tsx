@@ -40,8 +40,8 @@ const Projects: React.FC = () => {
     },
     {
       title: "CipherShastra",
-      description: "Founded a blockchain security company providing comprehensive smart contract auditing services and security consulting.",
-      technologies: ["Security Consulting", "Smart Contracts", "Team Building"],
+      description: "Founded an open-source platform for learning smart contract security through hands-on CTF challenges.",
+      technologies: ["CTF", "Smart Contracts", "Education"],
       link: "https://ciphershastra.com",
       type: "research"
     },
