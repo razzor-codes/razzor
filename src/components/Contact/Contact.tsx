@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
     {
       icon: MapMarkerIcon,
       label: 'Location',
-      value: 'United Arab Emirates',
+      value: 'India, open to remote and relocation',
       link: null
     }
   ];
