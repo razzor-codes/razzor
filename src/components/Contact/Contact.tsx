@@ -310,7 +310,7 @@ const Contact: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                   >
                     {status === 'success' &&
-                      "Thanks for reaching out — I'll get back to you within 24–48 hours."}
+                      "Thanks for reaching out. I'll get back to you within 24-48 hours."}
                     {status === 'mailto' &&
                       `Your mail app should have opened with the message ready to send. If it didn't, email me directly at ${CONTACT_EMAIL}.`}
                     {status === 'error' &&
