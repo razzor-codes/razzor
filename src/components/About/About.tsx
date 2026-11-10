@@ -50,19 +50,19 @@ const About: React.FC = () => {
             <motion.div variants={itemVariants} className="about-text">
               <h3>My Story</h3>
               <p>
-                I'm a Blockchain Security Engineer. Most recently, at ADI Foundation, I ran in-house
-                code reviews, led security audits, shaped the AppSec policies and guidelines, and owned
-                incident response. My journey in cybersecurity began with a Bachelor's degree in Computer
+                I'm a Blockchain Security Engineer. Most recently, at ADI Foundation, I audited the
+                smart contracts and zkEVM circuits in-house, ran the bug bounty programs, and wrote the
+                security guidelines and upgrade policy. My journey in cybersecurity began with a Bachelor's degree in Computer
                 Science from Mithibai College, Mumbai University (2014-2017), where I graduated with a
                 CGPA of 6.7/7.0.
               </p>
 
               <p>
-                Before ADI, I led blockchain security at Reckong Tech, secured zero-knowledge proof systems
-                and smart contracts at Matter Labs/zkSync, and worked at leading security firms like
-                ConsenSys Diligence and QuillAudits. Across those roles I've conducted numerous audits on
-                complex protocols, helped teams adopt more secure system designs, and contributed to the
-                blockchain security community through research and education.
+                Before ADI, I built and audited client protocols at Reckong Tech, and at Matter Labs (zkSync)
+                wrote the production FFLONK verifier and led an incident response that recovered about $500k.
+                Before that I was an auditor at ConsenSys Diligence and QuillAudits, with 50+ audits on
+                complex protocols. Along the way I've helped teams adopt more secure system designs, and
+                contributed to the blockchain security community through research and education.
               </p>
 
               <p>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
               <div className="about-highlights">
                 <div className="highlight-item">
                   <h4>🔍 Security Focus</h4>
-                  <p>Specialized in smart contract audits, circuit security, and formal verification</p>
+                  <p>Specialized in smart contract audits, ZK proof verifiers and circuits, rollups and bridges</p>
                 </div>
                 <div className="highlight-item">
                   <h4>🎓 Education & Learning</h4>

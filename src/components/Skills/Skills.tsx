@@ -60,6 +60,7 @@ const Skills: React.FC = () => {
       color: "#06b6d4",
       skills: [
         "Solidity",
+        "Yul",
         "Rust",
         "Python",
         "JavaScript/TypeScript",
@@ -75,6 +76,7 @@ const Skills: React.FC = () => {
       color: "#f59e0b",
       skills: [
         "Foundry",
+        "Medusa",
         "Hardhat",
         "Slither",
         "Mythril",

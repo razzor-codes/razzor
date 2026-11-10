@@ -24,12 +24,10 @@ const Experience: React.FC = () => {
       company: "ADI Foundation",
       period: "June 2026 - Nov 2026",
       description: [
-        "Lead security audits and code reviews across the organisation's codebases",
-        "Building the AppSec programme: policies, procedures and engineering guidelines",
-        "Own incident response and security triage",
-        "Added automated security checks to CI/CD pipelines to catch vulnerabilities before release",
-        "Threat-model new systems before launch, reviewing backend services, APIs and infrastructure alongside smart contracts",
-        "Use AI tooling to speed up code review and security triage"
+        "Audited the smart contracts and zkEVM circuits in-house, and led security reviews across the organisation's codebases and dApps",
+        "Ran the public bug bounty programs on HackenProof (smart contracts, zkEVM, PredictStreet): validated and triaged reports",
+        "Wrote the security guidelines and upgrade policy, and a P0/P1/P2 tracker of fixes due before each upgrade",
+        "Pentested the wallets; closed contract and repository issues raised in Aikido"
       ]
     },
     {
@@ -37,22 +35,19 @@ const Experience: React.FC = () => {
       company: "Reckong Tech",
       period: "Sep 2025 - May 2026",
       description: [
-        "Ran end-to-end security reviews of smart contracts and ZK circuits and set company-wide security policies",
-        "Built custom tools and internal security libraries to harden the development lifecycle",
-        "Managed external audits with top-tier firms as the primary security liaison, overseeing remediation",
-        "Threat-modelled new protocols and features before launch so security requirements were set early"
+        "Designed, built and audited client smart contract protocols end to end, from threat model to launch, including a points and rewards system for airline loyalty programs"
       ]
     },
     {
       title: "Security Engineer",
-      company: "Matter Labs/zkSync",
+      company: "Matter Labs (zkSync)",
       period: "March 2024 - August 2025",
       description: [
-        "Security-reviewed zkSync's smart contracts and ZK circuits, new and existing",
-        "Built testing and formal-verification tooling to catch bugs earlier",
-        "Led external audits as the point of contact between zkSync and audit firms",
-        "Reviewed L1 ↔ L2 bridge and messaging contracts",
-        "Handled incident response and security triage, including external bug bounty reports",
+        "Audited new and existing smart contracts and ZK circuits in-house",
+        "Led an incident response that recovered ~$500k across ZK chains: found every funded address exposed to cross-chain replay by the EVM emulator upgrade, and recovered them atomically with it",
+        "Wrote zkSync's FFLONK proof verifier from scratch; it runs in production",
+        "Managed Matter Labs' external audits by OpenZeppelin (chain contract upgrades) and Nethermind (PLONK verifier), through to fixes",
+        "Shipped TEE attestation contracts built on Automata",
         "Presented ZK verifier bug research at ETHTaipei 2025"
       ]
     },
@@ -61,21 +56,18 @@ const Experience: React.FC = () => {
       company: "ConsenSys Diligence",
       period: "June 2022 - Feb 2024",
       description: [
-        "Audited complex DeFi and ZK protocols, including Linea's PLONK verifier and canonical token bridge, Gearbox V2 and Forta delegated staking",
-        "Helped audited teams move to safer system designs, not just patch individual bugs",
-        "Contributed to Diligence's in-house security tooling, building analysis tools and vulnerability detectors used in audits",
-        "Wrote threat models and design reviews for audited teams",
+        "Audited rollups, bridges, ZK verifiers and DeFi: Linea (PLONK verifier, message service, token bridge), Forta delegated staking, Gearbox V2",
+        "Wrote threat models and design recommendations for client teams",
         "Researched new attack vectors and shared them with the team and on stage at ETHDubai, Nullc0n Berlin and c0c0n"
       ]
     },
     {
-      title: "Blockchain Smart Contract Auditor",
+      title: "Smart Contract Auditor",
       company: "QuillAudits",
       period: "May 2021 - June 2022",
       description: [
-        "Audited DeFi protocols including YoloRekt and the Nord Finance suite, using manual review plus functional, automated and fuzz testing",
-        "Worked with clients on fixes for the issues each audit found",
-        "Interviewed candidates to grow the audit team"
+        "Audited smart contracts, including YoloRekt and the Nord Finance suite, with manual review, automated and fuzz testing; guided clients through fixes",
+        "Interviewed candidates for the audit team"
       ]
     },
     {
@@ -83,8 +75,7 @@ const Experience: React.FC = () => {
       company: "TSPL's Explorium",
       period: "Jul 2018 - May 2019",
       description: [
-        "Taught programming, networking, cyber-security and software design",
-        "Planned and revised the curriculum and course materials"
+        "Taught programming, networking and cybersecurity"
       ]
     }
   ];
